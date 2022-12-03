@@ -1,0 +1,13 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <TargetFrameworks>netstamdard2.0</TargetFrameworks>
+        <IncludeInSolutionFile>false</IncludeInSolutionFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="**/*proj" Exclude="./*proj"/>
+        <ProjectReference Remove="*proj" />
+        <Compile Remove="@(Compile)" />
+    </ItemGroup>
+</Project>

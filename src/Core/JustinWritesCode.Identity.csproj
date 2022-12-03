@@ -1,0 +1,35 @@
+<!--
+ * JustinWritesCode.Identity.csproj
+ * 
+ *   Created: 2022-11-13-03:32:35
+ *   Modified: 2022-11-14-11:06:15
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <RootNamespace>JustinWritesCode.Identity</RootNamespace>
+    <AssemblyName>JustinWritesCode.Identity.Core</AssemblyName>
+    <AssemblyTitle>JustinWritesCode.Identity.Core</AssemblyTitle>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" />
+    <!-- <PackageReference Include="Microsoft.Extensions.Identity.Claims" /> -->
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <PackageReference Include="System.Security.Usings" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="System.Usings" />
+    <PackageReference Include="System.ComponentModel.Usings" />
+    <PackageReference Include="System.Collections.Generic.Usings" />
+    <PackageReference Include="JustinWritesCode.System.Extensions" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="System.Text.Json.Usings" />
+    <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+    <ProjectReference Include="../Claims/JustinWritesCode.Identity.Claims.csproj" />
+  </ItemGroup>
+</Project>

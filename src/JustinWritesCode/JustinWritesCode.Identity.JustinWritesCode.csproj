@@ -1,0 +1,21 @@
+<!--
+ * JustinWritesCode.Identity.JustinWritesCode.csproj
+ * 
+ *   Created: 2022-11-27-02:34:48
+ *   Modified: 2022-11-27-02:34:49
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <!-- <TargetFrameworks>netstandard2.0</TargetFrameworks> -->
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- <ProjectReference Include="../Claims/JustinWritesCode.Identity.Claims.csproj" /> -->
+    </ItemGroup>
+</Project>

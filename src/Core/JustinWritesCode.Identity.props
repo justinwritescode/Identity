@@ -1,0 +1,43 @@
+﻿<!--
+ * JustinWritesCode.Identity.Core.props
+ *
+ *   Created: 2022-11-13-03:32:35
+ *   Modified: 2022-11-13-03:33:55
+ *
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+    <ItemGroup>
+        <Using Include="JustinWritesCode.Identity.Models" />
+        <Using Include="JustinWritesCode.Identity.Abstractions" />
+        <Using Include="JustinWritesCode.Identity.Models" />
+        <Using Include="JustinWritesCode.Identity.Models" />
+        <Using Include="JustinWritesCode.Abstractions" />
+        <Using Include="System.Diagnostics" />
+        <Using Include="Microsoft.AspNetCore.Identity" />
+        <Using Include="JustinWritesCode.Identity.Constants" Static="true" />
+    </ItemGroup>
+    <ItemGroup Label="EntityFrameworkCore">
+    <!-- </ItemGroup>
+    <ItemGroup Condition="'$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local'">
+      <ProjectReference Include="../../../EntityFrameworkCore/JustinWritesCode.EntityFrameworkCore.csproj" />
+      <ProjectReference Include="../../../Types/src/Enumerations/CodeGeneration/JustinWritesCode.Enumerations.CodeGeneration.csproj" TreatAsPackageReference="true" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+      <ProjectReference Include="../../../Types/src/Extensions/JustinWritesCode.System.Extensions.csproj" />
+      <ProjectReference Include="../../../Types/src/Core/ComponentModel/JustinWritesCode.ComponentModel.csproj" />
+      <ProjectReference Include="../../../Types/src/Extensions/JustinWritesCode.System.Extensions.csproj" />
+      <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+      <ProjectReference Include="../Constants/JustinWritesCode.Identity.Constants.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(Configuration)' != 'Testing' And '$(Configuration)' != 'Local'"> -->
+        <PackageReference Include="JustinWritesCode.System.Extensions" ExcludeAssets="ContentFiles" />
+        <PackageReference Include="JustinWritesCode.EntityFrameworkCore" />
+        <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers" PrivateAssets="All" />
+        <PackageReference Include="JustinWritesCode.ComponentModel" />
+        <!-- <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Abstractions" />
+        <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Extensions" /> -->
+    </ItemGroup>
+</Project>

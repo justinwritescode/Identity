@@ -1,0 +1,42 @@
+﻿<!--
+ * Usings.props
+ * 
+ *   Created: 2022-11-13-03:32:35
+ *   Modified: 2022-11-14-11:17:38
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+    <ItemGroup>
+        <!-- <Using Include="JustinWritesCode.Identity.Models" />
+        <Using Include="JustinWritesCode.Identity.Enums" />
+        <Using Include="JustinWritesCode.Identity.Constants.Columns" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.Views" Static="true" /> -->
+        <!--<Using Include="JustinWritesCode.Identity.Constants.DbTypes" Static="true" />-->
+        <!-- <Using Include="JustinWritesCode.Identity.Constants.User.Columns" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.Triggers" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.Tables" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.Schemas" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.Claim.Columns" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.RoleClaim" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.Claim" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Constants.UserIds" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Enums.UserLoginProvider" Static="true" />
+        <Using Include="JustinWritesCode.Identity.Models.UserLoginProvider" Alias="MUserLoginProvider" />
+        <Using Include="JustinWritesCode.Identity.Enums.UserLoginProvider" Alias="EUserLoginProvider" />
+        <Using Include="JustinWritesCode.Identity.Models.BackroomRole" Alias="Role" />
+        <Using Include="JustinWritesCode.Identity.Models.BackroomUserRole" Alias="UserRole" />
+        <Using Include="JustinWritesCode.Identity.Models.BackroomUser" Alias="User" />
+        <Using Include="JustinWritesCode.Identity.Models.BackroomRoleClaim" Alias="RoleClaim" />
+        <Using Include="JustinWritesCode.Identity.Models.BackroomUserClaim" Alias="UserClaim" />
+        <Using Include="JustinWritesCode.Identity.Models.BackroomUserLogin" Alias="UserLogin" />
+        <Using Include="JustinWritesCode.Identity.Models.BackroomUserToken" Alias="UserToken" />
+        <Using Include="JustinWritesCode.Identity.Models.Abstractions.IBackroomUser" Alias="IUser" />
+        <Using Include="Microsoft.IdentityModel" />
+        <Using Include="Microsoft.AspNetCore.Identity" /> -->
+    </ItemGroup>
+</Project>

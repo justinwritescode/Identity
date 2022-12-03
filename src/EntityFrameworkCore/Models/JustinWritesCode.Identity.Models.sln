@@ -1,0 +1,35 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustinWritesCode.Identity.Models", "JustinWritesCode.Identity.Models.csproj", "{A3D0830F-161C-4E2E-B305-0433D4CB2C06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3116F849-9206-47CF-A449-2A5D20F5C75D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Local|Any CPU = Local|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Staging|Any CPU = Staging|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Testing|Any CPU = Testing|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Local|Any CPU.Build.0 = Local|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06}.Testing|Any CPU.Build.0 = Testing|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3D0830F-161C-4E2E-B305-0433D4CB2C06} = {3116F849-9206-47CF-A449-2A5D20F5C75D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EA3CAEE-C5F9-45D0-A9B4-D74EE918AC65}
+	EndGlobalSection
+EndGlobal

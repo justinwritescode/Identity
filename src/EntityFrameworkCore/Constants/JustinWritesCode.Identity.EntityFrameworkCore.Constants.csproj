@@ -1,0 +1,17 @@
+<!--
+ * JustinWritesCode.Identiy.EntityFrameworkCore.Constants.csproj
+ * 
+ *   Created: 2022-12-01-05:13:41
+ *   Modified: 2022-12-01-05:13:41
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+</Project>

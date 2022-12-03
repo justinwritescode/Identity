@@ -1,0 +1,17 @@
+<!--
+ * JustinWritesCode.Identity.EntityFrameworkCore.Abstractions.csproj
+ * 
+ *   Created: 2022-12-01-04:52:03
+ *   Modified: 2022-12-01-04:52:03
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+</Project>

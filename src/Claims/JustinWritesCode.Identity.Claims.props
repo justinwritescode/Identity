@@ -1,0 +1,31 @@
+<Project>
+    <!-- <ItemGroup Condition="'$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local'">
+        <ProjectReference Include="../../Core/Tuples/JustinWritesCode.Tuples.csproj" />
+    </ItemGroup>
+    <Import Project="../../Core/Tuples/JustinWritesCode.Tuples.props" Condition="'$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local'" />
+    <ItemGroup Condition="'$(Configuration)' != 'Testing' And '$(Configuration)' != 'Local'"> -->
+    <ItemGroup>
+        <PackageReference Include="JustinWritesCode.Tuples" />
+        <PackageReference Include="JustinWritesCode.System.Extensions" />
+        <PackageReference Include="JustinWritesCode.ComponentModel" />
+        <!-- <PackageReference Include="JustinWritesCode.Constants" IncludeAssets="ContentFiles; Build" ExculdeAssets="Lib; Runtime; Analyzers; Natice; Compile" /> -->
+        <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" />
+        <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" />
+        <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers; Build" PrivateAssets="All" />
+    </ItemGroup>
+    <!-- <ItemGroup>
+        <ProjectReference Include="../../Extensions/JustinWritesCode.System.Extensions.csproj" />
+    </ItemGroup> -->
+    <ItemGroup>
+        <PackageReference Include="FluentValidation" />
+        <PackageReference Include="FluentValidation.Usings" />
+        <PackageReference Include="System.Security.Usings" />
+        <PackageReference Include="System.Usings" />
+        <PackageReference Include="System.Text.Json.Usings" />
+        <PackageReference Include="System.Text.Json" />
+        <!-- <PackageReference Include="JustinWritesCode.System.Extensions" /> -->
+    </ItemGroup>
+    <ItemGroup>
+        <Using Include="JustinWritesCode.Identity.Claims.ClaimValueTypes" Static="true" />
+    </ItemGroup>
+</Project>
