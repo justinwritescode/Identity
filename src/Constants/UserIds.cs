@@ -10,7 +10,6 @@
 //      License: MIT (https://opensource.org/licenses/MIT)
 //
 
-using System;
 namespace JustinWritesCode.Identity
 {
     public static partial class Constants
@@ -18,6 +17,7 @@ namespace JustinWritesCode.Identity
         public static class UserIds
         {
             public const long JustinsId = 1;
+
             public const long DrewsId = 2;
             // public static readonly User Justin = new User
             // {

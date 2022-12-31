@@ -1,0 +1,21 @@
+<!--
+ * JustinWritesCode.Identity.EntityFrameworkCore.csproj
+ *
+ *   Created: 2022-12-05-08:05:41
+ *   Modified: 2022-12-05-08:05:41
+ *
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <ItemGroup>
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" />
+    <!-- <PackageReference Include="JustinWritesCode.Identity.EntityFrameworkCore.Constants" /> -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Core" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+  </ItemGroup>
+</Project>

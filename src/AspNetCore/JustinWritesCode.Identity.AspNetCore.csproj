@@ -1,0 +1,40 @@
+<!--
+ * JustinWritesCode.Identity.AspNetCore.csproj
+ * 
+ *   Created: 2022-12-13-08:36:07
+ *   Modified: 2022-12-13-08:36:08
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net7.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" /> 
+    <PackageReference Include="System.Usings" />
+    <PackageReference Include="JustinWritesCode.System.Extensions" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.Payloads" />
+    <!-- <PackageReference Include="JustinWritesCode.Http.Extensions" /> -->
+  </ItemGroup>
+  
+  <ItemGroup Condition="true">
+    <ProjectReference Include="../EntityFrameworkCore/JustinWritesCode.Identity.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../Models/JustinWritesCode.Identity.Models.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="false">
+    <ProjectReference Include="JustinWritesCode.Identity.EntityFrameworkCore" />
+    <ProjectReference Include="JustinWritesCode.Payloads" />
+    <ProjectReference Include="JustinWritesCode.Identity.Models" />
+  </ItemGroup>
+</Project>

@@ -1,16 +1,41 @@
 <!--
- * JustinWritesCode.Identity.Core.Abstractions.csproj
+ * JustinWritesCode.Identity.EntityFrameworkCore.Abstractions.csproj
  * 
- *   Created: 2022-11-13-03:37:12
- *   Modified: 2022-11-13-03:37:12
+ *   Created: 2022-12-01-04:52:03
+ *   Modified: 2022-12-01-04:52:03
  * 
  *   Author: Justin Chase <justin@justinwritescode.com>
  *   
  *   Copyright © 2022 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
+
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <BuildFromSource>false</BuildFromSource>
+  </PropertyGroup>
+  
+  <ItemGroup Condition="true">
+    <PackageReference Include="libphonenumber-csharp" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <PackageReference Include="System.Collections.Generic.Usings" />
+    <PackageReference Include="System.ComponentModel.Usings" />
+    <PackageReference Include="System.Text.Json.Usings" />
+    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="System.Security.Usings" />
+    <PackageReference Include="Telegram.Bot.Extensions" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(BuildFromSource)' != 'true'">
+    <PackageReference Include="JustinWritesCode.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Primitives" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(BuildFromSource)' == 'true'">
+    <ProjectReference Include="../../../EntityFrameworkCore/src/Constants/JustinWritesCode.EntityFrameworkCore.Constants.csproj" />
+    <ProjectReference Include="../../../Types/src/Core/Abstractions/JustinWritesCode.Abstractions.csproj" />
+    <ProjectReference Include="../../../Types/src/Primitives/JustinWritesCode.Primitives.csproj" />
+  </ItemGroup>
+  <Import Project="../../../EntityFrameworkCore/src/Constants/JustinWritesCode.EntityFrameworkCore.Constants.props" />
 </Project>

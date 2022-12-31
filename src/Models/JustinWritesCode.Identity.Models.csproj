@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- <TargetFramework>netstandard2.0</TargetFramework> -->
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+		<PackageReference Include="AutoMapper" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Core" />
+    <PackageReference Include="AspNetCore.Hashids" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="System.ComponentModel.Annotations" />
+    <PackageReference Include="System.ComponentModel.Usings" />
+    <PackageReference Include="JustinWritesCode.Primitives" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+    <ProjectReference Include="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
+    <ProjectReference Include="../Claims/JustinWritesCode.Identity.Claims.csproj" />
+    <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="SendPulse.Telegram" />
+    <PackageReference Include="SendPulse.Identity" />
+    <PackageReference Include="Telegram.Identity" />
+    <PackageReference Include="Telegram.Bot.Extensions" />
+    <PackageReference Include="JustinWritesCode.Abstractions" />
+    <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" />
+    <PackageReference Include="JustinWritesCode.Primitives" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers;Build" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+  </ItemGroup>
+
+  <!-- <ItemGroup Condition="'$(BuildFromSource)' == 'true'">
+    <ProjectReference Include="../../../AspNetCore/src/Hashids/JustinWritesCode.AspNetCore.Hashids.csproj" />
+    <ProjectReference Include="../../../EntityFrameworkCore/src/Constants/JustinWritesCode.EntityFrameworkCore.Constants.csproj" ExcludeAssets="ContentFiles" />
+    <ProjectReference Include="../../../Identity/src/Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+    <ProjectReference Include="../../../Identity/src/EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
+    <ProjectReference Include="../../../Identity/src/Claims/JustinWritesCode.Identity.Claims.csproj" />
+    <ProjectReference Include="../../../SendPulse/src/Data/SendPulse.Data.csproj" />
+    <ProjectReference Include="../../../SendPulse/src/Telegram/SendPulse.Telegram.csproj" />
+    <ProjectReference Include="../../../Telegram/src/Identity/Telegram.Identity.csproj" />
+    <ProjectReference Include="../../../Telegram/src/Telegram/Telegram.Bot.Extensions.csproj" />
+    <ProjectReference Include="../../../Types/src/Core/Abstractions/JustinWritesCode.Abstractions.csproj" />
+    <ProjectReference Include="../../../Types/src/Primitives/JustinWritesCode.Primitives.csproj" ExcludeAssets="ContentFiles" />
+    <ProjectReference Include="../../../Types/src/Enumerations/Enumeration/Abstractions/JustinWritesCode.Enumerations.Abstractions.csproj" ExcludeAssets="ContentFiles" />
+    <ProjectReference Include="../../../Types/src/Enumerations/Enumeration/JustinWritesCode.Enumerations.Enumeration.csproj" ExcludeAssets="ContentFiles" />
+    <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+    <ProjectReference Include="../Claims/JustinWritesCode.Identity.Claims.csproj" />    
+    <ProjectReference Include="../../../Types/src/Enumerations/CodeGeneration/JustinWritesCode.Enumerations.CodeGeneration.csproj" IncludeAssets="Analyzers;Build" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(BuildFromSource)' != 'true'">
+    <PackageReference Include="JustinWritesCode.Abstractions" />
+    <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" />
+    <PackageReference Include="JustinWritesCode.Primitives" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.Identity.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Identity.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Identity.EntityFrameworkCore.Constants" />
+    <PackageReference Include="JustinWritesCode.Identity.Claims" IncludeAssets="Compile;Build" ExcludeAssets="ContentFiles" />    
+    <PackageReference Include="JustinWritesCode.System.Extensions" IncludeAssets="ContentFiles" ExcludeAssets="Lib;Runtime;Native;Analyzers;Compile" PrivateAssets="All" />
+    <PackageReference Include="JustinWritesCode.Tuples" />
+    <PackageReference Include="SendPulse.Data" />
+    <PackageReference Include="SendPulse.Telegram" />
+    <PackageReference Include="System.All.Usings" />
+    <PackageReference Include="System.Security.Usings" />
+    <PackageReference Include="Telegram.Bot.Extensions" />
+    <PackageReference Include="Telegram.Identity" />
+    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers;Build" PrivateAssets="All" />
+  </ItemGroup> -->
+  <ItemGroup>
+    <!-- <Compile Include="../../../Types/src/Extensions/System/TryCreatrUriExtensions.cs" /> -->
+  </ItemGroup>
+  <!-- <Import Project="../../../EntityFrameworkCore/src/Constants/JustinWritesCode.EntityFrameworkCore.Constants.props" />
+  <Import Project="../Claims/JustinWritesCode.Identity.Claims.props" /> -->
+  <Import Project="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.props" />
+  <!-- <Import Project="../../../Telegram/src/Identity/Telegram.Identity.props" /> -->
+</Project>

@@ -1,31 +1,32 @@
 <Project>
-    <!-- <ItemGroup Condition="'$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local'">
-        <ProjectReference Include="../../Core/Tuples/JustinWritesCode.Tuples.csproj" />
-    </ItemGroup>
-    <Import Project="../../Core/Tuples/JustinWritesCode.Tuples.props" Condition="'$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local'" />
-    <ItemGroup Condition="'$(Configuration)' != 'Testing' And '$(Configuration)' != 'Local'"> -->
     <ItemGroup>
-        <PackageReference Include="JustinWritesCode.Tuples" />
-        <PackageReference Include="JustinWritesCode.System.Extensions" />
-        <PackageReference Include="JustinWritesCode.ComponentModel" />
+        <!-- <PackageReference Include="JustinWritesCode.Tuples" ExcludeAssets="ContentFiles" /> -->
+        <!-- <PackageReference Include="JustinWritesCode.System.Extensions" /> -->
+        <!-- <PackageReference Include="JustinWritesCode.ComponentModel" ExcludeAssets="ContentFiles" /> -->
         <!-- <PackageReference Include="JustinWritesCode.Constants" IncludeAssets="ContentFiles; Build" ExculdeAssets="Lib; Runtime; Analyzers; Natice; Compile" /> -->
-        <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" />
-        <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" />
-        <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers; Build" PrivateAssets="All" />
+        <!-- <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" ExcludeAssets="ContentFiles" /> -->
+        <!-- <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" ExcludeAssets="ContentFiles" /> -->
+        <!-- <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers; Build" PrivateAssets="All" ExcludeAssets="ContentFiles" /> -->
     </ItemGroup>
-    <!-- <ItemGroup>
-        <ProjectReference Include="../../Extensions/JustinWritesCode.System.Extensions.csproj" />
-    </ItemGroup> -->
     <ItemGroup>
-        <PackageReference Include="FluentValidation" />
-        <PackageReference Include="FluentValidation.Usings" />
+        <!-- <PackageReference Include="Ardalis.SmartEnum" />
+        <PackageReference Include="FluentValidation" /> -->
+        <!-- <PackageReference Include="FluentValidation.Usings" /> -->
         <PackageReference Include="System.Security.Usings" />
         <PackageReference Include="System.Usings" />
-        <PackageReference Include="System.Text.Json.Usings" />
-        <PackageReference Include="System.Text.Json" />
-        <!-- <PackageReference Include="JustinWritesCode.System.Extensions" /> -->
+        <PackageReference Include="System.Security.Claims" />
+        <PackageReference Include="System.ComponentModel.Annotations" />
+        <!-- <PackageReference Include="System.Text.Json.Usings" />
+        <PackageReference Include="System.Text.Json" /> -->
+        <PackageReference Include="JustinWritesCode.System.Extensions" ExcludeAssets="ContentFiles" />
     </ItemGroup>
     <ItemGroup>
-        <Using Include="JustinWritesCode.Identity.Claims.ClaimValueTypes" Static="true" />
+        <Using Include="JustinWritesCode.Identity" Alias="JwcId" />
+        <Using Include="JustinWritesCode.Identity.ClaimTypes" Alias="JwcCt" />
+        <Using Include="JustinWritesCode.Identity.ClaimValueTypes" Alias="JwcCvt" />
+        <Using Include="JustinWritesCode.Identity.Roles" Alias="JwcR" />
+        <!-- <Using Include="JustinWritesCode.Identity.Uris" Alias="JwcIdUris" />
+        <Using Include="System.Uri" Alias="@uri" />
+        <Using Include="System.UriKind" Static="true" /> -->
     </ItemGroup>
 </Project>

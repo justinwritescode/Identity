@@ -1,0 +1,33 @@
+<!--
+ * JustinWritesCode.Identity.EntityFrameworkCore.Migrations.csproj
+ * 
+ *   Created: 2022-12-19-07:53:06
+ *   Modified: 2022-12-19-07:53:07
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <EfCoreVersion>7.0.1</EfCoreVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../EntityFrameworkCore/JustinWritesCode.Identity.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../Models/JustinWritesCode.Identity.Models.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.EntityFrameworkCore" Version="$(EfCoreVersion)" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.Abstractions" Version="$(EfCoreVersion)" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.Analyzers" Version="$(EfCoreVersion)" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.Relational" Version="$(EfCoreVersion)" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer" Version="$(EfCoreVersion)" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.Tools" Version="$(EfCoreVersion)" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.Design" Version="$(EfCoreVersion)" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="[1.1.6,)" />
+    <PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" ExcludeAssets="ContentFiles" VersionOverride="[5.2.0,)" />
+  </ItemGroup>
+</Project>

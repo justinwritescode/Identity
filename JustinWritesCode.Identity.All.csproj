@@ -1,13 +1,26 @@
+<!--
+ * JustinWritesCode.Identity.All copy.slnproj
+ * 
+ *   Created: 2022-12-27-05:42:50
+ *   Modified: 2022-12-27-05:42:50
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
 
-<Project Sdk="Microsoft.NET.Sdk">
+
+<Project Sdk="Microsoft.Build.Traversal">
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <TargetFrameworks>netstamdard2.0</TargetFrameworks>
+       <TargetFramework>netstandard2.0</TargetFramework>
         <IncludeInSolutionFile>false</IncludeInSolutionFile>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="**/*proj" Exclude="./*proj"/>
         <ProjectReference Remove="*proj" />
+        <ProjectReference Remove="./src/Old/**/*" />
+        <ProjectReference Remove="./src/Migrations/*.csproj" />
         <Compile Remove="@(Compile)" />
     </ItemGroup>
 </Project>

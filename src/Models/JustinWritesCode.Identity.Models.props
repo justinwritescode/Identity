@@ -1,0 +1,42 @@
+<!--
+ * JustinWritesCode.Identity.Models copy.csproj
+ * 
+ *   Created: 2022-12-01-05:08:42
+ *   Modified: 2022-12-01-05:08:42
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <ItemGroup>
+
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.All.Usings" />
+    <PackageReference Include="System.ComponentModel.Usings" />
+  </ItemGroup>
+  <ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Core" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="JustinWritesCode.Abstractions" />
+    <Using Include="JustinWritesCode.EntityFrameworkCore.Constants.DbTypeNames" Static="true" />
+    <Using Include="JustinWritesCode.Enumerations.Abstractions" />
+    <Using Include="JustinWritesCode.Identity.ClaimTypes" Alias="JwcCt" />
+    <Using Include="JustinWritesCode.Identity.ClaimValueTypes" Alias="JwcCvt" />
+    <Using Include="JustinWritesCode.Identity.EntityFrameworkCore.Constants.TableNames" Static="true" />
+    <Using Include="JustinWritesCode.Identity.EntityFrameworkCore.Constants" Static="true" />
+    <Using Include="JustinWritesCode.Identity.EntityFrameworkCore.UriMaxLengthConstant" Static="true" />
+    <Using Include="Microsoft.AspNetCore.Identity" />
+    <Using Include="Microsoft.AspNetCore" />
+    <Using Include="System.ComponentModel.DataAnnotations.Schema" />
+    <Using Include="System.ComponentModel.DataAnnotations" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.String" Static="true" />
+  </ItemGroup>
+</Project>

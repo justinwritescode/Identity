@@ -1,5 +1,70 @@
+<!--
+ * JustinWritesCode.Identity.EntityFrameworkCore.csproj
+ *
+ *   Created: 2022-12-05-08:05:41
+ *   Modified: 2022-12-05-08:05:41
+ *
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-    </PropertyGroup>
+  <PropertyGroup>
+    <!-- <TargetFramework>net6.0;net7.0</TargetFramework> -->
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+  </PropertyGroup>
+   <ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+	  <PackageReference Include="Microsoft.Extensions.Identity.Core" />
+	  <PackageReference Include="System.Collections.Generic.Usings" />
+  </ItemGroup>
+  <ItemGroup Condition="true">
+    <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Abstractions" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Extensions" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Extensions" />
+    <PackageReference Include="Telegram.Identity" />
+    <PackageReference Include="JustinWritesCode.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Primitives" />
+    <PackageReference Include="JustinWritesCode.InterfaceGenerator" IncludeAssets="Analyzers" ExcludeAssets="Compile; ContentFiles; Lib; Native" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup Condition="true">
+    <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+    <ProjectReference Include="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
+    <ProjectReference Include="../Constants/JustinWritesCode.Identity.Constants.csproj" />
+    <ProjectReference Include="../Models/JustinWritesCode.Identity.Models.csproj" />    
+  </ItemGroup>
+  <ItemGroup Condition="false">
+    <!-- <ProjectReference Include="../../../SendPulse/src/Data/SendPulse.Data.csproj" />
+    <ProjectReference Include="../../../Types/src/Primitives/JustinWritesCode.Primitives.csproj" /> -->
+    <!-- <ProjectReference Include="../Constants/JustinWritesCode.Identity.Constants.csproj" /> -->
+    <ProjectReference Include="../../../AspNetCore/src/Hashids/JustinWritesCode.AspNetCore.Hashids.csproj" />
+    <ProjectReference Include="../../../EntityFrameworkCore/src/Abstractions/JustinWritesCode.EntityFrameworkCore.Abstractions.csproj" />
+    <ProjectReference Include="../../../EntityFrameworkCore/src/Constants/JustinWritesCode.EntityFrameworkCore.Constants.csproj" />
+    <ProjectReference Include="../../../EntityFrameworkCore/src/Extensions/JustinWritesCode.EntityFrameworkCore.Extensions.csproj" />
+    <ProjectReference Include="../../../EntityFrameworkCore/src/Extensions/JustinWritesCode.EntityFrameworkCore.Extensions.csproj" />
+    <ProjectReference Include="../../../SendPulse/src/Data/SendPulse.Data.csproj" />
+    <ProjectReference Include="../../../Telegram/src/Identity/Telegram.Identity.csproj" />
+    <ProjectReference Include="../../../Types/src/Core/Abstractions/JustinWritesCode.Abstractions.csproj" />
+    <ProjectReference Include="../../../Types/src/Primitives/JustinWritesCode.Primitives.csproj" />
+    <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+    <ProjectReference Include="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
+    <ProjectReference Include="../Constants/JustinWritesCode.Identity.Constants.csproj" />
+    <ProjectReference Include="../Models/JustinWritesCode.Identity.Models.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="!true">
+	  <PackageReference Include="System.Collections.Generic.Usings" />
+    <PackageReference Include="JustinWritesCode.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Primitives" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Abstractions" />
+    <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Extensions" />
+    <PackageReference Include="JustinWritesCode.Identity.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Identity.Constants" />
+    <PackageReference Include="JustinWritesCode.Identity.EntityFrameworkCore.Constants" />
+    <PackageReference Include="JustinWritesCode.Identity.Models" />
+    <PackageReference Include="SendPulse.Data" />
+  </ItemGroup>
 </Project>
