@@ -34,7 +34,7 @@
     <PackageReference Include="JustinWritesCode.Primitives" ExcludeAssets="ContentFiles" />
     <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" ExcludeAssets="ContentFiles" />
     <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" ExcludeAssets="ContentFiles" />
-    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers;Build" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration.V2" IncludeAssets="Analyzers;Build" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
   </ItemGroup>
 
   <!-- <ItemGroup Condition="'$(BuildFromSource)' == 'true'">

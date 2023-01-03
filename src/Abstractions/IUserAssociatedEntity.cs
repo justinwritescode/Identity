@@ -15,8 +15,8 @@ using JustinWritesCode.Abstractions;
 
 namespace JustinWritesCode.Identity.Abstractions
 {
-    public interface IUserAssociatedEntity : IIdentifiable<long>
+    public interface IUserAssociatedEntity : IIdentifiable<int>
     {
-        long UserId { get; set; }
+        int UserId { get; set; }
     }
 }

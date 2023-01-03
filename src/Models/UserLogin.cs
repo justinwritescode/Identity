@@ -20,7 +20,7 @@ using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 
 [Table(tbl_UserLogin, Schema = IdSchema), DebuggerDisplay("User Login (Id} - {LoginProvider}: {ProviderKey})")]
 [JSerializable(typeof(UserLogin))]
-public class UserLogin : IdentityUserLogin<int>, IIdentifiable<int>//, IUserLoginThing//, IHaveTimestamps
+public class UserLogin : IdentityUserLogin<int>, IIdentifiable<int>, IUserAssociatedEntity//, IUserLoginThing//, IHaveTimestamps
 {
     [Key, DbGen(DbGenO.Identity), Column(nameof(Id), TypeName = DbTypeInt), Required]
     public virtual int Id { get; set; }
@@ -38,14 +38,14 @@ public class UserLogin : IdentityUserLogin<int>, IIdentifiable<int>//, IUserLogi
     public override string ProviderDisplayName { get => Provider.DisplayName; set { } }
 
     [JIgnore, Newtonsoft.Json.JsonIgnore]
-    protected virtual UserLoginProvider Provider { get => UserLoginProvider.Parse<UserLoginProvider>(ProviderName); set => ProviderName = value.Name; }
+    public virtual UserLoginProvider Provider { get => UserLoginProvider.Parse(ProviderName, null); set => ProviderName = value.Name; }
 
     public virtual int ProviderId
     {
         get => Provider.Id;
         set
         {
-            Provider = UserLoginProvider.FromValue<UserLoginProvider>(value);
+            Provider = UserLoginProvider.FromId(value);
             ProviderName = Provider.Name;
             ProviderDisplayName = Provider.DisplayName;
         }

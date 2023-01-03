@@ -30,8 +30,8 @@ public static partial class ClaimValueTypes
     /// <value><inheritdoc cref="XmlSchema11_2Uri" path="/value/node()" /><inheritdoc cref="NS.AnyUriAnchor" path="/value/node()" /></value>
     public const string AnyUri = "urn:";
     /// <summary>A URI for representing a phone number</summary>
-    /// <value><inheritdoc cref="JwcIdUriStrings.IdentityClaimBaseUri" path="/value/node()" /><inheritdoc cref="NS.Schema" path-=/value/node()" /><inheritdoc cref="NS.PhoneNumber" path-=/value/node()" /></value>
-    public const string Json =    $"{ClaimTypes.IdentityClaimBaseUri}{NS.Schema}{NS.Json}";
+    /// <value><inheritdoc cref="JwcCt.IdentityClaimBaseUri" path="/value" /><inheritdoc cref="NS.Schema" path="/value" /><inheritdoc cref="NS.PhoneNumber" path="/value" /></value>
+    public const string Json =    $"{JwcCt.IdentityClaimBaseUri}{NS.Schema}{NS.Json}";
     /// <summary>A URI for representing a phone number</summary>
     /// <value><inheritdoc cref="BaseUri" path="/value" />:<inheritdoc cref="NS.PhoneNumber" path="/value" /></value>
     public const string PhoneNumber = $"{BaseUri}:{NS.PhoneNumber}";
@@ -52,7 +52,7 @@ public static partial class ClaimValueTypes
     /// <value>http://www.w3.org/2001/XMLSchema#dateTime</value>
     public const string DateTime = SysSecCvt.DateTime;
     /// <summary>A URI that represents the daytimeDuration XQuery data type.</summary>
-    /// <value>://www.w3.org/TR/2002/WD-xquery-operators-20020816#dayTimeDuration</value>
+    /// <value>http://www.w3.org/TR/2002/WD-xquery-operators-20020816#dayTimeDuration</value>
     public const string DaytimeDuration = SysSecCvt.DaytimeDuration;
     /// <summary>A URI that represents the dns SOAP data type.</summary>
     /// <value>http://schemas.xmlsoap.org/claims/dns</value>

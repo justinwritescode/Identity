@@ -35,15 +35,26 @@ public enum UserLoginProviderEnum
     Apple = 7,
     [Uri("https://github.com/")]
     GitHub = 8,
+    [Uri("https://linkedin.com/")]
     LinkedIn = 9,
+    [Uri("https://instagram.com/")]
     Instagram = 10,
+    [Uri("https://discord.com/")]
     Discord = 11,
+    [Uri("https://twitch.com/")]
     Twitch = 12,
+    [Uri("https://yahoo.com/")]
     Yahoo = 13,
+    [Uri("https://amazon.com/")]
     Amazon = 14,
+    [Uri("https://spotify.com/")]
     Spotify = 15,
+    [Uri("https://reddit.com/")]
     Reddit = 16,
+    [Uri("https://stackoverflow.com/")]
     StackOverflow = 17,
+    [Uri("https://paypal.com/")]
     PayPal = 18,
+    [Uri("https://stripe.com/")]
     Stripe = 19
 }

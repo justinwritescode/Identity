@@ -16,9 +16,9 @@ using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 
 [Table(tbl_UserToken, Schema = IdSchema), DebuggerDisplay("User Token ({UserId} - {LoginProvider}, Created: {DateTimeCreated})")]
 [JSerializable(typeof(UserToken))]
-public class UserToken : IdentityUserToken<int>, IIdentifiable<int>//, IUserAssociatedEntity//, IUserLoginThing//, IHaveTimestamps
+public class UserToken : IdentityUserToken<int>, IIdentifiable<int>, IUserAssociatedEntity//, IUserAssociatedEntity//, IUserLoginThing//, IHaveTimestamps
 {
-    [Key, DbGen(DbGenO.Identity)/*, Column(ColId, Order = 0, TypeName = TInt)*/]
+    [Key, DbGen(DbGenO.Identity)]
     public virtual int Id { get; set; } //= NewId;
 
     [Column(nameof(UserId))]
@@ -33,7 +33,7 @@ public class UserToken : IdentityUserToken<int>, IIdentifiable<int>//, IUserAsso
     //[ForeignKey(nameof(ProviderId)), BackingField("_provider")]
     protected virtual UserLoginProvider Provider
     {
-        get => UserLoginProvider.Parse<UserLoginProvider>(LoginProvider);
+        get => UserLoginProvider.Parse(LoginProvider, null);
         set => base.LoginProvider = value.DisplayName;
     }
 

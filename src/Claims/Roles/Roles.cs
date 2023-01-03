@@ -80,36 +80,28 @@ public static class Roles
 
     public static class Uris
     {
-        /// <summary>The URI for the <inheritdoc cref="Admin" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.Admin" path="/value" /></value>
-        public static readonly uri Admin = uri.From(Roles.Admin);
+        /// <inheritdoc cref="JwcR.Admin" />
+        public static readonly uri Admin = uri.From(JwcR.Admin);
 
-        /// <summary>The URI for the <inheritdoc cref="Administrator" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.Administrator" path="/value" /></value>
-        public static readonly uri Administrator = uri.From(Roles.Administrator);
+        /// <inheritdoc cref="JwcR.Administrator" />
+        public static readonly uri Administrator = uri.From(JwcR.Administrator);
 
-        /// <summary>The URI for the <inheritdoc cref="GroupAdministrator" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.GroupAdministrator" path="/value" /></value>
-        public static readonly uri GroupAdministrator = uri.From(Roles.GroupAdministrator);
+        /// <inheritdoc cref="JwcR.GroupAdministrator" />
+        public static readonly uri GroupAdministrator = uri.From(JwcR.GroupAdministrator);
 
-        /// <summary>The URI for the <inheritdoc cref="Owner" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.Owner" path="/value" /></value>
-        public static readonly uri Owner = uri.From(Roles.Owner);
+        /// <inheritdoc cref="JwcR.Owner" />
+        public static readonly uri Owner = uri.From(JwcR.Owner);
 
-        /// <summary>The URI for the <inheritdoc cref="User" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.User" path="/value" /></value>
-        public static readonly uri User = uri.From(Roles.User);
+        /// <inheritdoc cref="JwcR.User" />
+        public static readonly uri User = uri.From(JwcR.User);
 
-        /// <summary>The URI for the <inheritdoc cref="GroupMember" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.GroupMember" path="/value" /></value>
-        public static readonly uri GroupMember = uri.From(Roles.GroupMember);
+        /// <inheritdoc cref="JwcR.GroupMember" />
+        public static readonly uri GroupMember = uri.From(JwcR.GroupMember);
 
-        /// <summary>The URI for the <inheritdoc cref="Voter" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.Voter" path="/value" /></value>
-        public static readonly uri Voter = uri.From(Roles.Voter);
+        /// <inheritdoc cref="JwcR.Voter" />
+        public static readonly uri Voter = uri.From(JwcR.Voter);
 
-        /// <summary>The URI for the <inheritdoc cref="Contestant" path="/value" /> role</summary>
-        /// <value><inheritdoc cref="BaseUri" path="/value" /><inheritdoc cref="Names.Contestant" path="/value" /></value>
-        public static readonly uri Contestant = uri.From(Roles.Contestant);
+        /// <inheritdoc cref="JwcR.Contestant" />
+        public static readonly uri Contestant = uri.From(JwcR.Contestant);
     }
 }

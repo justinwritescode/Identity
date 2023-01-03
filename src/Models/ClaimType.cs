@@ -11,6 +11,8 @@
  */
 #pragma warning disable
 namespace JustinWritesCode.Identity.Models;
+
+[Table(tbl_ClaimType, Schema = IdSchema)]
 public class ClaimType : IIdentifiable<long>
 {
     [Key, DbGen(DatabaseGeneratedOption.Identity)]

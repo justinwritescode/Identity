@@ -12,18 +12,21 @@
 
 namespace JustinWritesCode.Identity.Models;
 using System;
+using JustinWritesCode.Identity.Abstractions;
 
 /// <summary>A join entity between <see cref="Models.User" />s and <see cref="Models.Bot" />s</summary>
-public record UserContactId
-{
-    [Hashids]
-    public int UserId { get; set; }
-    [Hashids]
-    public int BotId { get; set; }
-    public ObjectId ContactId { get; set; }
+public record UserContactId : IUserContactId
+    [Key]
+    public virtual int Id { get; set; }
 
-    public virtual Bot? Bot { get;set; }
-    public virtual User? User { get;set; }
+    [Hashids]
+    public virtual int UserId { get; set; }
+    [Hashids]
+    public virtual int BotId { get; set; }
+    public virtual ObjectId ContactId { get; set; }
+
+    public virtual Bot? Bot { get; set; }
+    public virtual User? User { get; set; }
 }
 
 public record UserContactIdInsertDto

@@ -13,13 +13,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
+using AutoMapper;
 using JustinWritesCode.Abstractions;
 using JustinWritesCode.Identity.Abstractions;
 using static JustinWritesCode.EntityFrameworkCore.Constants.DbTypeNames;
 using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 namespace JustinWritesCode.Identity.Models;
-using JwcCvt = JustinWritesCode.Identity.ClaimValueTypes;
 using JwcCt = JustinWritesCode.Identity.ClaimTypes;
+using JwcCvt = JustinWritesCode.Identity.ClaimValueTypes;
 
 
 [Table(tbl_UserClaim, Schema = IdSchema), DebuggerDisplay("User Claim ({Id} - User ID: {UserId}, {Type}: {Value})")]
@@ -122,4 +123,21 @@ public class UserClaim : IdentityUserClaim<int>, IIdentifiable<int>//, IEntityCl
         newClaim.InitializeFromClaim(claim);
         return newClaim;
     }
+}
+
+
+public record struct ClaimCreateDto
+{
+    public ClaimCreateDto()
+    {
+        Type = JwcCt.Unknown;
+        Issuer = JwcCt.BaseUri;
+        ValueType = JwcCvt.Unknown;
+        Value = string.Empty;
+    }
+
+    public string Value { get; set; }
+    public uri? Type { get; set; }
+    public uri? Issuer { get; set; }
+    public uri? ValueType { get; set; }
 }

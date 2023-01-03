@@ -46,7 +46,8 @@ public class IdentityDbContext : MSID.IdentityDbContext<User, Role, int, UserCla
             entity.ToTable(tbl_User, IdSchema);
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.HasKey(e => e.Id);
-            entity.Property(e => e.ConcurrencyStamp).IsConcurrencyToken();
+            // entity.Property(e => e.ConcurrencyStamp).IsConcurrencyToken();
+            entity.Ignore(e => e.ConcurrencyStamp);
             entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
             entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
             entity.Property(e => e.Email).HasMaxLength(255);
@@ -100,6 +101,7 @@ public class IdentityDbContext : MSID.IdentityDbContext<User, Role, int, UserCla
             entity.ToTable(tbl_UserLogin, IdSchema);
             entity.HasKey(e => new { e.LoginProvider, e.ProviderKey, e.ProviderDisplayName });
             entity.HasOne(e => e.User).WithMany(u => u.Logins).HasForeignKey(e => e.UserId).HasPrincipalKey(e => e.Id);
+            entity.HasOne(e => e.Provider).WithMany().HasForeignKey(e => e.ProviderId).HasPrincipalKey(e => e.Id);
         });
         builder.Entity<RoleClaim>(entity =>
         {
@@ -145,18 +147,18 @@ public class IdentityDbContext : MSID.IdentityDbContext<User, Role, int, UserCla
 
     public override DbSet<TEntity> Set<TEntity>()
     {
-        if (typeof(TEntity) == typeof(UserClaim))
+        return typeof(TEntity) switch
         {
-            return base.Set<UserClaim>().Include(uc => uc.ClaimType) as DbSet<TEntity>;
-        }
-        else if(typeof(TEntity) == typeof(User))
-        {
-            return Users.Include(u => u.Roles).Include(u => u.Claims) as DbSet<TEntity> ?? Users as DbSet<TEntity>;
-        }
-        else
-        {
-            return base.Set<TEntity>();
-        }
-        base.Set<TEntity>();
+            var t when t == typeof(UserClaim) => (UserClaims.Include(uc => uc.ClaimType) as DbSet<TEntity> ?? UserClaims as DbSet<TEntity>) as DbSet<TEntity>,
+            var t when t == typeof(User) => Users.Include(u => u.Roles).Include(u => u.Claims) as DbSet<TEntity> ?? Users as DbSet<TEntity>,
+            var t when t == typeof(UserRole) => UserRoles as DbSet<TEntity>,
+            var t when t == typeof(Role) => Roles.Include(r => r.Users) as DbSet<TEntity>,
+            var t when t == typeof(RoleClaim) => RoleClaims.Include(rc => rc.ClaimType) as DbSet<TEntity>,
+            var t when t == typeof(UserLogin) => UserLogins as DbSet<TEntity>,
+            var t when t == typeof(UserToken) => UserTokens as DbSet<TEntity>,
+            var t when t == typeof(Bot) => Bots as DbSet<TEntity>,
+            var t when t == typeof(UserContactId) => UserContactIds as DbSet<TEntity>,
+            _ => base.Set<TEntity>()
+        };
     }
 }

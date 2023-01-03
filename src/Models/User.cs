@@ -29,8 +29,12 @@ using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 public class User : IdentityUser<int>, IIdentifiable<int>, IUser//, IHaveTimestamps
 {
     public const string DefaultPassword = "Just1n is really fuckin sexy!";
+    public const string DefaultLockoutEndString = "1/1/1970";
 
-    public User() { }
+    public User()
+    {
+        LockoutEnd = DateTimeOffset.Parse(DefaultLockoutEndString);
+     }
 
     /// <summary>The user's ID unique to The JustinWritesCode family of apps and bots.</summary>
     [Hashids, DbGen(DbGenO.Identity)]
@@ -57,7 +61,7 @@ public class User : IdentityUser<int>, IIdentifiable<int>, IUser//, IHaveTimesta
     /// <summary>Gets or sets a flag indicating if the user can be locked out.</summary>
     /// <value><pre><b>True</b></pre> if the user <b><b>can</b></b> be locked out, <pre><b>false</b></pre> otherwise.</value>
     [DefaultValue(true), Column("Is" + nameof(LockoutEnabled))]
-    public virtual bool LockoutEnabled { get; set; } = true;
+    public override bool LockoutEnabled { get; set; } = true;
     /// <summary>Gets or sets a flag indicating if a user has confirmed his telephone number.</summary>
     /// <value><pre><b>True</b></pre> if the user has confirmed ownership of the <see cref="Email"/> address in his profile, <pre><b>false</b></pre> otherwise.</value>
     [DefaultValue(false), Column("Is" + nameof(EmailConfirmed))]
@@ -65,25 +69,37 @@ public class User : IdentityUser<int>, IIdentifiable<int>, IUser//, IHaveTimesta
     /// <summary>Gets or sets a flag indicating if a user has confirmed his telephone address.</summary>
     /// <value><pre><b>True</b></pre> if the user has confirmed ownership of the <see cref="PhoneNumber"/> in his profile, <pre><b>false</b></pre> otherwise.</value>
     [DefaultValue(false), Column("Is" + nameof(PhoneNumberConfirmed))]
-    public virtual bool PhoneNumberConfirmed { get => base.PhoneNumberConfirmed; set => base.PhoneNumberConfirmed = value; }
+    public override bool PhoneNumberConfirmed { get => base.PhoneNumberConfirmed; set => base.PhoneNumberConfirmed = value; }
     /// <summary>Gets or sets a flag indicating if a user has two-factor authentication set up.</summary>
     /// <value><pre><b>True</b></pre> if the user has two-factor authentication set up,  <pre><b>false</b></pre> otherwise.</value>
     [DefaultValue(false), Column("Is" + nameof(TwoFactorEnabled))]
-    public virtual bool TwoFactorEnabled { get => base.TwoFactorEnabled; set => base.TwoFactorEnabled = value; }
+    public override bool TwoFactorEnabled { get => base.TwoFactorEnabled; set => base.TwoFactorEnabled = value; }
     /// <summary>Gets or sets a flag indicating whether the user has been locked out (either deliberately be an administrator or by exhausting the number of attempts allowed to authenticate.</summary>
     /// <value><pre>True</pre> if the user <b><i>is locked out</i></b> right now, <pre><b>false</b></pre> otherwise.</value>
     [DefaultValue(false), Column("Is" + nameof(LockedOut))]
     public virtual bool LockedOut => LockoutEnabled && LockoutEnd > Now;
+
+    /// <inheritdoc cref="IdentityUser{int}.LockoutEnd" />
+    [DefaultValue(typeof(DateTimeOffset), DefaultLockoutEndString)]
+    public override DateTimeOffset? LockoutEnd { get => base.LockoutEnd ??= DateTimeOffset.Parse(DefaultLockoutEndString); set => base.LockoutEnd = value; }
+
     /// <summary>Gets or sets the user's email address as a string.</summary>
     [Column("EmailAddress", TypeName = DbTypeNVarChar), JIgnore, XmlIgnore]
     public override string? Email { get => base.Email; set { base.Email = value; base.NormalizedEmail = value?.Normalize(); } }
     /// <summary>Gets or sets the normalized email address for this user as a string.</summary>
     [Column(nameof(NormalizedEmailAddress)), JIgnore, XmlIgnore]
-    public override string NormalizedEmail  { get => base.NormalizedEmail; set { base.NormalizedEmail = value; } }
+    public override string? NormalizedEmail  { get => base.NormalizedEmail = Email?.Normalize(); set { base.NormalizedEmail = value?.Normalize(); } }
     /// <summary>Gets or sets the user's username (usually the same as the <see cref="TelegramUsername" />)</summary>
     /// <example>justinwritescode</example>
     [JsonPropertyName("username")]
     public override string? UserName { get => base.UserName; set { base.UserName = value; base.NormalizedUserName = value?.Normalize(); } }
+
+    public override string? NormalizedUserName { get => base.NormalizedUserName = UserName?.Normalize(); set => base.NormalizedUserName = value?.Normalize(); }
+
+    public override bool Equals(object? obj)
+        => obj is IBasicUserInfo user && obj is IIdentifiable<int> userId && userId.Id == Id;
+
+    public override int GetHashCode() => Id;
 
     /// <inheritdoc cref="IBasicUserInfo.PhoneNumber" />
     /// <example>+19185256012</example>
@@ -96,7 +112,7 @@ public class User : IdentityUser<int>, IIdentifiable<int>, IUser//, IHaveTimesta
 
     /// <summary>A hashed and salted representation of the user's password.</summary>
     [JsonIgnore]
-    public override string PasswordHash { get; set; } = "*** PASSWORD NOT SET ***";
+    public override string? PasswordHash { get; set; } = null;
     /// <summary>A random value that must change whenever a users credentials change (password changed, login removed)</summary>
 
     [Timestamp, Column(nameof(SecurityStamp), TypeName = DbTypeNVarChar)]

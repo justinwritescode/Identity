@@ -24,7 +24,7 @@ public class UserLoginProviderConverter : ValueConverter<UserLoginProvider, int>
 {
     public UserLoginProviderConverter() : base(
         v => v.Id,
-        v => UserLoginProvider.FromValue<UserLoginProvider>(v))
+        v => UserLoginProvider.FromId(v))
     {
     }
 }
