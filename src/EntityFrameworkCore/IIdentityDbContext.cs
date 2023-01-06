@@ -6,7 +6,7 @@
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
@@ -14,7 +14,8 @@ namespace JustinWritesCode.Identity;
 using Microsoft.EntityFrameworkCore.Abstractions;
 
 [GenerateInterfaceAttribute(typeof(IdentityDbContext))]
-public partial interface IIdentityDbContext : IDbContext<IIdentityDbContext>
+public partial interface IIdentityDbContext : IDbContext, IDbContext<IIdentityDbContext>
 {
-
+    // static string IDbContext.DefaultConnectionStringConfigurationKey => "IdentityDb";
+    // public string DefaultConnectionStringConfigurationKey => "IdentityDb";
 }

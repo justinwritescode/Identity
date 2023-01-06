@@ -6,7 +6,7 @@
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 #pragma warning disable
@@ -17,6 +17,7 @@ using JustinWritesCode.EntityFrameworkCore;
 using JustinWritesCode.Identity.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Abstractions;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Telegram.Bot.Types;
 using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 using static JustinWritesCode.Identity.EntityFrameworkCore.Constants;
@@ -25,9 +26,9 @@ using IdentityClaimType = JustinWritesCode.Identity.Models.ClaimType;
 using MSID = Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using User = JustinWritesCode.Identity.Models.User;
 
-public class IdentityDbContext : MSID.IdentityDbContext<User, Role, int, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>,
-    IDbContext<IdentityDbContext>, IIdentityDbContext
+public class IdentityDbContext : MSID.IdentityDbContext<User, Role, int, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>, IIdentityDbContext, IDbContext<IIdentityDbContext>
 {
+
     public virtual DbSet<Bot> Bots { get; set; }
     public virtual DbSet<UserContactId> UserContactIds { get; set; }
     public virtual DbSet<User> Users { get; set; }
@@ -37,6 +38,9 @@ public class IdentityDbContext : MSID.IdentityDbContext<User, Role, int, UserCla
     public virtual DbSet<UserLogin> UserLogins { get; set; }
     public virtual DbSet<RoleClaim> RoleClaims { get; set; }
     public virtual DbSet<UserToken> UserTokens { get; set; }
+
+    static string DefaultConnectionStringConfigurationKey => "IdentityDb";
+
     public IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options) { }
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -87,7 +91,11 @@ public class IdentityDbContext : MSID.IdentityDbContext<User, Role, int, UserCla
         });
         builder.Entity<UserClaim>(entity =>
         {
-            entity.ToTable(tbl_UserClaim, IdSchema);
+            entity.ToTable(tbl_UserClaim, IdSchema,
+                tb =>
+                {
+                    // (tb as TableBuilder).HasTrigger("SomeTrigger");
+                });
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Properties).HasConversion <JsonObjectConverter<IStringDictionary>>();
             entity.Property(e => e.Type).HasConversion<uri.EfCoreValueConverter>();
