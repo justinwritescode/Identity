@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 /*
  * User.cs
  *
@@ -7,11 +6,12 @@ using System.Threading.Tasks;
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 #pragma warning disable
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace JustinWritesCode.Identity.Models;
 using System.Collections.ObjectModel;
@@ -39,20 +39,17 @@ public class User : IdentityUser<int>, IIdentifiable<int>, IUser//, IHaveTimesta
     /// <summary>The user's ID unique to The JustinWritesCode family of apps and bots.</summary>
     [Hashids, DbGen(DbGenO.Identity)]
     public override int Id { get => base.Id; set => base.Id = value; }
-    /// <summary>Gets or sets the user's Telegram username</summary>
-    /// <example>sleazytucker69</example>
+    /// <inheritdoc cref="IBasicUserInfo.TelegramUsername" />
     public virtual string? TelegramUsername { get; set; }
     /// <summary>Gets or sets the user's Telegram ID 64, a-bit signed integer</summary>
     /// <example>1234567</example>
     public virtual long TelegramId { get; set; }
 
-    /// <summary>Gets or sets the user's given/first name </summary>
-    /// <example>Justin</example>
+    /// <inheritdoc cref="IBasicUserInfo.GivenName" />
     public virtual string? GivenName { get; set; } = null;
     /// <inheritdoc cref="IBasicUserInfo.Surname" />
     public virtual string? Surname { get; set; } = null;
-    /// <summary>Gets or sets the user's "go-by" name, or what he'd like to be called.</summary>
-    /// <example>God of Telegram</example>
+    /// <inheritdoc cref="IBasicUserInfo.GoByName" />
     public virtual string? GoByName { get; set; } = null;
 
     /// <summary>The number of times the user tried and failed to authenticate.</summary>

@@ -6,7 +6,7 @@
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
@@ -21,19 +21,19 @@ using MSIDR = Microsoft.AspNetCore.Identity.IdentityResult;
 
 namespace JustinWritesCode.Identity;
 
-public class UserManager : UserManager<User>, IHaveADbContext<IdentityDbContext>
+public class UserManager : UserManager<User>, IHaveADbContext<IIdentityDbContext>
 {
     private readonly IPasswordGenerator _passwordGenerator;
 
-    public UserManager(IUserStore<User> store, IOptions<IdentityOptions> optionsAccessor, IPasswordHasher<User> passwordHasher, IEnumerable<IUserValidator<User>> userValidators, IEnumerable<IPasswordValidator<User>> passwordValidators, ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors, IServiceProvider services, ILogger<UserManager<User>> logger, IdentityDbContext db, IPasswordGenerator passwordGenerator)
+    public UserManager(IUserStore<User> store, IOptions<IdentityOptions> optionsAccessor, IPasswordHasher<User> passwordHasher, IEnumerable<IUserValidator<User>> userValidators, IEnumerable<IPasswordValidator<User>> passwordValidators, ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors, IServiceProvider services, ILogger<UserManager<User>> logger, IIdentityDbContext db, IPasswordGenerator passwordGenerator)
         : base(store, optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors, services, logger)
     {
         Db = db;
         _passwordGenerator = passwordGenerator;
     }
 
-    public IdentityDbContext Db { get; }
-    IDbContext IHaveADbContext.Db => Db;
+    public IIdentityDbContext Db { get; }
+    // IDbContext IHaveADbContext.Db => Db;
     public override IQueryable<User> Users => Db.Users;
 
     public virtual Task<User?> FindByIdAsync(int userId) => FindByIdAsync(userId.ToString());
@@ -68,7 +68,7 @@ public class UserManager : UserManager<User>, IHaveADbContext<IdentityDbContext>
         {
             user.Claims.Add(claim);
             _ = Db.Users.Update(user);
-            return await Db.SaveChangesAsync().ContinueWith(t => MSIDR.Success);
+            return await Db.SaveChangesAsync(default).ContinueWith(t => MSIDR.Success);
         };
     }
 

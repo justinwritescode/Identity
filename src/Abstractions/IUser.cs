@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
@@ -67,7 +67,7 @@ public interface IBasicUserInfo
     /// <summary>Gets or sets the user's surname</summary>
     /// <example>Chase</example>
     string Surname { get; set; }
-    /// <summary>Gets or sets the user's "go-by" name, or what he'd like to be called.</summary>
+    /// <summary>Gets or sets the name the user "goes by" or wat he'd like to be called.</summary>
     /// <example>God of Telegram</example>
     string? GoByName { get; set; }
     /// <summary>Gets or sets the user's phone number as a data structure</summary>

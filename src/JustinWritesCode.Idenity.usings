@@ -1,0 +1,24 @@
+<!--
+ * Identity.usings
+ * 
+ *   Created: 2023-01-03-01:00:39
+ *   Modified: 2023-01-03-01:00:40
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="UsingsSdk">
+  <ItemGroup>
+    <Using Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Alias="MSID" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <PackageReference Include="JustinWritesCode.Identity.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Identity.AspNetCore" />
+    <PackageReference Include="JustinWritesCode.Identity.Claims" />
+    <PackageReference Include="JustinWritesCode.Identity.Constants" />
+    <PackageReference Include="JustinWritesCode.Identity.EntityFrameworkCore" />
+    <PackageReference Include="JustinWritesCode.Identity.Models" />
+  </ItemGroup>
+</Project>

@@ -6,7 +6,7 @@
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 #pragma warning disable
@@ -136,8 +136,24 @@ public record struct ClaimCreateDto
         Value = string.Empty;
     }
 
-    public string Value { get; set; }
-    public uri? Type { get; set; }
-    public uri? Issuer { get; set; }
-    public uri? ValueType { get; set; }
+    /// <summary>The value of the claim</summary>
+    /// <example>Justin</example>
+    /// <remarks>See <see href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claim.value?view=net-7.0">Claim.Value</see> for more information.</remarks>
+    /// <default />
+    public string Value { get; set; } = string.Empty;
+    /// <summary>The type of the claim</summary>
+    /// <example>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name</example>
+    /// <remarks>See <see href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimtypes?view=net-7.0">ClaimTypes</see> for more information.</remarks>
+    /// <default>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name</default>
+    public uri? Type { get; set; } = JwcCt.Unknown;
+    /// <summary>The issuer of the claim</summary>
+    /// <example>https://justinwritescode.com</example>
+    /// <remarks>See <see href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claim.issuer?view=net-7.0">Claim.Issuer</see> for more information.</remarks>
+    /// <default>https://justinwritescode.com</default>
+    public uri? Issuer { get; set; } = JwcCt.BaseUri;
+    /// <summary>The type of the claim's value</summary>
+    /// <example>http://www.w3.org/2001/XMLSchema#string</example>
+    /// <remarks>See <see href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimvaluetype?view=net-7.0">ClaimValueType</see> for more information.</remarks>
+    /// <default>http://www.w3.org/2001/XMLSchema#string</default>
+    public uri? ValueType { get; set; } = JwcCvt.String;
 }
