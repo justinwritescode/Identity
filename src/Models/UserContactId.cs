@@ -6,7 +6,7 @@
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
@@ -16,6 +16,7 @@ using JustinWritesCode.Identity.Abstractions;
 
 /// <summary>A join entity between <see cref="Models.User" />s and <see cref="Models.Bot" />s</summary>
 public record UserContactId : IUserContactId
+{
     [Key]
     public virtual int Id { get; set; }
 

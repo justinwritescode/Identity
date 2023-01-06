@@ -9,7 +9,7 @@
 
 # MIT License
 
-Copyright © 2022 Justin Chase, All Rights Reserved
+Copyright © 2022-2023 Justin Chase, All Rights Reserved
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
