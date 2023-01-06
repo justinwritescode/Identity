@@ -12,8 +12,8 @@
 
 namespace JustinWritesCode.Security;
 
-[GenerateEnumerationRecordStruct]
-public enum OperationEnum
+[GenerateEnumerationRecordStruct(nameof(Operations), "JustinWritesCode.Security")]
+public enum OperationsEnum
 {
     Create,
     Read,
