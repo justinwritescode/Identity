@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <!-- <TargetFramework>netstandard2.0</TargetFramework> -->
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
 		<PackageReference Include="AutoMapper" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" />
 		<PackageReference Include="Microsoft.Extensions.Identity.Core" />
-    <PackageReference Include="AspNetCore.Hashids" />
+    <PackageReference Include="AspNetCore.Hashids" Condition="!$(TargetFramework.Contains('netstandard'))" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="System.ComponentModel.Annotations" />
     <PackageReference Include="System.ComponentModel.Usings" />
@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" />
     <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" ExcludeAssets="ContentFiles" />
     <PackageReference Include="SendPulse.Telegram" />
     <PackageReference Include="SendPulse.Identity" />
