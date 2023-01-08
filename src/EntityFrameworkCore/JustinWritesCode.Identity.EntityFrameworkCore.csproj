@@ -17,26 +17,26 @@
   </PropertyGroup>
    <ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" />
 	  <PackageReference Include="Microsoft.Extensions.Identity.Core" />
 	  <PackageReference Include="System.Collections.Generic.Usings" />
   </ItemGroup>
   <ItemGroup Condition="true">
+    <PackageReference Include="JustinWritesCode.Abstractions" />
     <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" />
     <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Abstractions" />
     <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" />
     <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Extensions" />
     <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Extensions" />
-    <PackageReference Include="Telegram.Identity" />
-    <PackageReference Include="JustinWritesCode.Abstractions" />
-    <PackageReference Include="JustinWritesCode.Primitives" />
     <PackageReference Include="JustinWritesCode.InterfaceGenerator" IncludeAssets="Analyzers" ExcludeAssets="Compile; ContentFiles; Lib; Native" PrivateAssets="All" />
+    <PackageReference Include="JustinWritesCode.Primitives" />
+    <PackageReference Include="Telegram.Identity" />
   </ItemGroup>
   <ItemGroup Condition="true">
     <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
-    <ProjectReference Include="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
     <ProjectReference Include="../Constants/JustinWritesCode.Identity.Constants.csproj" />
+    <ProjectReference Include="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
     <ProjectReference Include="../Models/JustinWritesCode.Identity.Models.csproj" />    
   </ItemGroup>
   <ItemGroup Condition="false">
@@ -53,8 +53,8 @@
     <ProjectReference Include="../../../Types/src/Core/Abstractions/JustinWritesCode.Abstractions.csproj" />
     <ProjectReference Include="../../../Types/src/Primitives/JustinWritesCode.Primitives.csproj" />
     <ProjectReference Include="../Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
-    <ProjectReference Include="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
     <ProjectReference Include="../Constants/JustinWritesCode.Identity.Constants.csproj" />
+    <ProjectReference Include="../EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
     <ProjectReference Include="../Models/JustinWritesCode.Identity.Models.csproj" />
   </ItemGroup>
   <ItemGroup Condition="!true">

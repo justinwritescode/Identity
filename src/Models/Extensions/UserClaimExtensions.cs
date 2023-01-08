@@ -22,4 +22,11 @@ public static class UserClaimExtensions
         uc.InitializeFromClaim(c);
         return uc;
     }
+
+    public static RoleClaim ToRoleClaim(this C c)
+    {
+        var rc = new RoleClaim();
+        rc.InitializeFromClaim(c);
+        return rc;
+    }
 }

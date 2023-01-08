@@ -1,0 +1,35 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustinWritesCode.Security.Constants", "JustinWritesCode.Security.Constants.csproj", "{E5F651C6-8449-4D94-8581-73FDB637A43F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D91C9B44-76E0-4122-8598-4F4F9B78F00B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Local|Any CPU = Local|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Staging|Any CPU = Staging|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Testing|Any CPU = Testing|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Local|Any CPU.Build.0 = Local|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
+		{E5F651C6-8449-4D94-8581-73FDB637A43F}.Testing|Any CPU.Build.0 = Testing|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5F651C6-8449-4D94-8581-73FDB637A43F} = {D91C9B44-76E0-4122-8598-4F4F9B78F00B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A5B0DC5-21D5-4087-B994-48911FA99118}
+	EndGlobalSection
+EndGlobal

@@ -11,7 +11,7 @@
  */
 
 namespace JustinWritesCode.Identity.Abstractions;
-using Telegram.Bot.Types;
+// using Telegram.Bot.Types;
 
 public interface IBot
 {
@@ -20,5 +20,5 @@ public interface IBot
     string TelegramUsername { get; set; }
     string Name { get; set; }
     ObjectId SendPulseId { get; set; }
-    BotApiToken ApiToken { get; set; }
+    // BotApiToken ApiToken { get; set; }
 }

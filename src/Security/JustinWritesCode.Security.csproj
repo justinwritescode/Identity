@@ -10,16 +10,14 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.Build.Traversal">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IsPackable>true</IsPackable>
+    <IsNuGetized>true</IsNuGetized>
+    <IsPackagingProject>true</IsPackagingProject>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../Models/JustinWritesCode.Identity.Models.csproj" />
-    <ProjectReference Include="../EntityFrameworkCore/JustinWritesCode.Identity.EntityFrameworkCore.csproj" />
-    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration.V2" IncludeAssets="Analyzers;Build" ExcludeAssets="Lib;Source;Compile;Runtime;Native" />
-    <PackageReference Include="JustinWritesCode.Abstractions" />
-    <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" />
-    <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" />
+    <ProjectReference Include="./Constants/JustinWritesCode.Security.Constants.csproj" Pack="true" />
   </ItemGroup>
 </Project>

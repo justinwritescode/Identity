@@ -11,16 +11,25 @@
 -->
 
 
-<Project Sdk="Microsoft.Build.Traversal">
+<Project Sdk="Microsoft.NET.Sdk">
+    <Sdk Name="MetapackageSdk" />
     <PropertyGroup>
-       <TargetFramework>netstandard2.0</TargetFramework>
+        <NoBuild>true</NoBuild>
+        <IncludeBuildOutput>flase</IncludeBuildOutput>
+        <IncludeBuiltProjectOutputGroup>false</IncludeBuiltProjectOutputGroup>
+        <IncludeSourceFilesProjectOutputGroup>false</IncludeSourceFilesProjectOutputGroup>
         <IncludeInSolutionFile>false</IncludeInSolutionFile>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="**/*proj" Exclude="./*proj"/>
-        <ProjectReference Remove="*proj" />
-        <ProjectReference Remove="./src/Old/**/*" />
-        <ProjectReference Remove="./src/Migrations/*.csproj" />
+        <ProjectReference Include="./src/Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
+        <ProjectReference Include="./src/Authorization/JustinWritesCode.Identity.Authorization.csproj" />
+        <ProjectReference Include="./src/AspNetCore/JustinWritesCode.Identity.AspNetCore.csproj" />
+        <ProjectReference Include="./src/EfCore.Constants/JustinWritesCode.Identity.EntityFrameworkCore.Constants.csproj" />
+        <ProjectReference Include="./src/EntityFrameworkCore/JustinWritesCode.Identity.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="./src/JustinWritesCode.com/JustinWritesCode.com.Identity.csproj" />
+        <ProjectReference Include="./src/Models/JustinWritesCode.Identity.Models.csproj" />
+        <ProjectReference Include="./src/Security/JustinWritesCode.Security.csproj" />
         <Compile Remove="@(Compile)" />
     </ItemGroup>
 </Project>

@@ -1,0 +1,22 @@
+<!--
+ * JustinWritesCode.Security.Constants.csproj
+ * 
+ *   Created: 2023-01-06-10:34:03
+ *   Modified: 2023-01-06-10:34:04
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration.V2" />
+    <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" />
+    <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" />
+  </ItemGroup>
+</Project>
