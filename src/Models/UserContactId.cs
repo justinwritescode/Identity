@@ -17,7 +17,7 @@ using JustinWritesCode.Identity.Abstractions;
 /// <summary>A join entity between <see cref="Models.User" />s and <see cref="Models.Bot" />s</summary>
 public record UserContactId : IUserContactId
 {
-    [Key]
+    [Key, DbGen(DbGen.Identity)]
     public virtual int Id { get; set; }
 
     [Hashids]

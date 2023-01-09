@@ -13,6 +13,7 @@
 namespace System.Extensions.Security;
 
 using JustinWritesCode.Identity;
+using JustinWritesCode.Identity.Models;
 
 public static class ClaimsPrincipalExtensions
 {
@@ -23,6 +24,6 @@ public static class ClaimsPrincipalExtensions
 
     public static ClaimsIdentity ToClaimsIdentity(this User user)
     {
-        return new ClaimsIdentity();
+        return new ClaimsIdentity(user);
     }
 }

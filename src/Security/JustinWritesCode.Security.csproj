@@ -10,14 +10,18 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="Microsoft.Build.Traversal">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <IsPackable>true</IsPackable>
-    <IsNuGetized>true</IsNuGetized>
-    <IsPackagingProject>true</IsPackagingProject>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeBuiltProjectOutputGroup>false</IncludeBuiltProjectOutputGroup>
+    <IncludeSourceFilesProjectOutputGroup>false</IncludeSourceFilesProjectOutputGroup>
+    <IncludeInSolutionFile>false</IncludeInSolutionFile>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="./Constants/JustinWritesCode.Security.Constants.csproj" Pack="true" />
+    <Compile Remove="@(Compile)" />
+    <Using Include="System.Runtime.CompilerServices" />
   </ItemGroup>
 </Project>

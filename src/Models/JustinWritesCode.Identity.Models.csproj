@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <!-- <TargetFramework>netstandard2.0</TargetFramework> -->
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
 		<PackageReference Include="AutoMapper" />
@@ -13,6 +13,7 @@
     <PackageReference Include="System.ComponentModel.Annotations" />
     <PackageReference Include="System.ComponentModel.Usings" />
     <PackageReference Include="JustinWritesCode.Primitives" />
+    <PackageReference Include="System.Usings" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,16 +25,20 @@
 
   <ItemGroup>
     <PackageReference Include="JustinWritesCode.EntityFrameworkCore.Constants" ExcludeAssets="ContentFiles" />
+    <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" ExcludeAssets="ContentFiles" />
     <PackageReference Include="SendPulse.Telegram" />
     <PackageReference Include="SendPulse.Identity" />
     <PackageReference Include="Telegram.Identity" />
     <PackageReference Include="Telegram.Bot.Extensions" />
     <PackageReference Include="JustinWritesCode.Abstractions" />
+    <PackageReference Include="JustinWritesCode.ComponentModel" Aliases="JwcCm" />
     <PackageReference Include="JustinWritesCode.AspNetCore.Hashids" />
     <PackageReference Include="JustinWritesCode.Primitives" ExcludeAssets="ContentFiles" />
     <PackageReference Include="JustinWritesCode.Enumerations.Abstractions" ExcludeAssets="ContentFiles" />
     <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" ExcludeAssets="ContentFiles" />
-    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration.V2" IncludeAssets="Analyzers;Build" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration.V2" IncludeAssets="Analyzers;Build" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer"  />
+    <Reference Include="JustinWritesCode.ComponentModel" Aliases="JwcCm" />
+    <Reference Remove="JustinWritesCode.Enumerations.CodeGeneration.V2" />
   </ItemGroup>
 
   <!-- <ItemGroup Condition="'$(BuildFromSource)' == 'true'">

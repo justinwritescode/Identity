@@ -24,10 +24,10 @@ public class Role : IdentityRole<int>, IIdentifiable<int>
 {
     public const string RoleUriDefaultFormatString = "urn:role:{0}";
 
-    [Key, DbGen(DbGenO.Identity), Hashids]
+    [Key, DbGen(DbGen.Identity), Hashids]
     public override int Id { get; set; } //= NewId;
 
-    [Column(nameof(ConcurrencyStamp), TypeName = DbTypeRowVersion), DbGen(DbGenO.Computed)]
+    [Column(nameof(ConcurrencyStamp), TypeName = DbTypeRowVersion), DbGen(DbGen.Computed)]
     public override string? ConcurrencyStamp { get; set; } = NewGuid().ToString();
 
     [StringLength(UriMaxLength)]

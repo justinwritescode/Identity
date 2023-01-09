@@ -12,13 +12,10 @@
 
 namespace JustinWritesCode.Identity.Abstractions;
 
-using Microsoft.EntityFrameworkCore.Query;
-using static JustinWritesCode.EntityFrameworkCore.Constants.DbTypeNames;
 public interface IUserClaim : IEntityClaim<IUserClaim>, IUserAssociatedEntity
 {
 #if NET6_0_OR_GREATER
     public int UserId { get => EntityId; set => EntityId = value; }
 #else
-    public int UserId { get; set; }
 #endif
 }

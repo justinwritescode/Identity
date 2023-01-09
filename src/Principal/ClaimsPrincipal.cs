@@ -17,7 +17,7 @@ using SystemClaimsPrincipal = System.Security.Claims.ClaimsPrincipal;
 
 public class ClaimsPrincipal : SystemClaimsPrincipal
 {
-    public ClaimsPrincipal(User user) : base()
+    public ClaimsPrincipal(User user) : base(new ClaimsIdentity(user))
     {
 
     }
@@ -25,7 +25,7 @@ public class ClaimsPrincipal : SystemClaimsPrincipal
 
 public class ClaimsIdentity : SystemClaimsIdentity
 {
-    public ClaimsIdentity() : base()
+    public ClaimsIdentity(User user) : base(user.Claims.Select(c => c.ToClaim()))
     {
 
     }

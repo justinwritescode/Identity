@@ -37,7 +37,7 @@ public class User : IdentityUser<int>, IIdentifiable<int>, IUser//, IHaveTimesta
      }
 
     /// <summary>The user's ID unique to The JustinWritesCode family of apps and bots.</summary>
-    [Hashids, DbGen(DbGenO.Identity)]
+    [Hashids, DbGen(DbGen.Identity)]
     public override int Id { get => base.Id; set => base.Id = value; }
     /// <inheritdoc cref="IBasicUserInfo.TelegramUsername" />
     public virtual string? TelegramUsername { get; set; }
@@ -104,7 +104,7 @@ public class User : IdentityUser<int>, IIdentifiable<int>, IUser//, IHaveTimesta
     public override string? PhoneNumber { get; set; }
 
     /// <inheritdoc cref="IUser.ConcurrencyStamp" />
-    [Timestamp, Column(nameof(ConcurrencyStamp), TypeName = DbTypeRowVersion), DbGen(DbGenO.Computed), JsonIgnore]
+    [Timestamp, Column(nameof(ConcurrencyStamp), TypeName = DbTypeRowVersion), DbGen(DbGen.Computed), JsonIgnore]
     public override string ConcurrencyStamp { get => base.ConcurrencyStamp; set => base.ConcurrencyStamp = value; }
 
     /// <summary>A hashed and salted representation of the user's password.</summary>

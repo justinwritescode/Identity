@@ -7,9 +7,7 @@ public class ClaimType : UriDescriptionTuple
     public virtual ClaimValueType ValueType { get; }
 
     public ClaimType(@uri? uri, string? description = null, uri? claimValueType = null) : base(uri, description)
-    {
-        ValueType = claimValueType != null ? new ClaimValueType(claimValueType, null as string/*, null as IValidator<C>*/) : new ClaimValueType(JwcCvt.String);
-    }
+        => ValueType = claimValueType != null ? new ClaimValueType(claimValueType, null as string/*, null as IValidator<C>*/) : new ClaimValueType(JwcCvt.String);
     public ClaimType(string? uri, string? description = null, string? claimValueType = null) : this(uri.ToUri(), description, claimValueType?.ToUri()!) { }
 
     public override string ToString() => Uri.ToString();

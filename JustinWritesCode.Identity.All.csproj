@@ -12,14 +12,17 @@
 
 
 <Project Sdk="Microsoft.NET.Sdk">
-    <Sdk Name="MetapackageSdk" />
     <PropertyGroup>
         <NoBuild>true</NoBuild>
-        <IncludeBuildOutput>flase</IncludeBuildOutput>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
         <IncludeBuiltProjectOutputGroup>false</IncludeBuiltProjectOutputGroup>
         <IncludeSourceFilesProjectOutputGroup>false</IncludeSourceFilesProjectOutputGroup>
         <IncludeInSolutionFile>false</IncludeInSolutionFile>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net7.0</TargetFrameworks>
+        <RestoreDependsOn>
+            $(RestoreDependsOn);
+            CleanPreBuild
+        </RestoreDependsOn>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="./src/Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
@@ -30,6 +33,12 @@
         <ProjectReference Include="./src/JustinWritesCode.com/JustinWritesCode.com.Identity.csproj" />
         <ProjectReference Include="./src/Models/JustinWritesCode.Identity.Models.csproj" />
         <ProjectReference Include="./src/Security/JustinWritesCode.Security.csproj" />
-        <Compile Remove="@(Compile)" />
     </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="@(Compile)" />
+        <Using Include="System.Runtime.CompilerServices" />
+    </ItemGroup>
+    <Target Name="CleanPreBuild" BeforeTargets="Restore">
+        <Exec Command="rm -rf '$(MSBuildProjectDirectory)/**/obj'" />
+    </Target>
 </Project>

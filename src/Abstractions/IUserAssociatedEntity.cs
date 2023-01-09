@@ -10,13 +10,9 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
-using System;
-using JustinWritesCode.Abstractions;
+namespace JustinWritesCode.Identity.Abstractions;
 
-namespace JustinWritesCode.Identity.Abstractions
+public interface IUserAssociatedEntity : IIdentifiable<int>
 {
-    public interface IUserAssociatedEntity : IIdentifiable<int>
-    {
-        int UserId { get; set; }
-    }
+    int UserId { get; set; }
 }

@@ -22,7 +22,7 @@ using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 [JSerializable(typeof(RoleClaim))]
 public class RoleClaim : IdentityRoleClaim<int>, IIdentifiable<int>//, IEntityClaim//, IHaveTimestamps
 {
-    [Key, DbGen(DbGenO.None), Column(nameof(Id), Order = 0, TypeName = DbTypeBigInt), Hashids]
+    [Key, DbGen(DbGen.None), Column(nameof(Id), Order = 0, TypeName = DbTypeBigInt), Hashids]
     public override int Id { get; set; } //= NewId;
 
     [Hashids]

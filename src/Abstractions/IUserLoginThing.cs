@@ -1,10 +1,8 @@
-﻿// namespace JustinWritesCode.Identity.Abstractions;
+﻿namespace JustinWritesCode.Identity.Abstractions;
 
-// public interface IUserLoginThing : IIdentifiable<long>
-// {
-//     byte ProviderId { get; set; }
-//     MUserLoginProvider Provider { get; set; }
-//     string ProviderName { get; set; }
-//     BackroomUser User { get; set; }
-//     BackroomKey UserId { get; set; }
-// }
+public interface IUserLoginThing : IIdentifiable<int>
+{
+    int ProviderId { get; set; }
+    string ProviderName { get; set; }
+    int UserId { get; set; }
+}

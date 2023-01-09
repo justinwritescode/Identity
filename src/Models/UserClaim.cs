@@ -40,7 +40,7 @@ public class UserClaim : IdentityUserClaim<int>, IIdentifiable<int>//, IEntityCl
     }
 
     /// <summary>The ID of the claim</summary>
-    [Key, DbGen(DbGenO.None), Hashids, Column(nameof(Id)), Required]
+    [Key, DbGen(DbGen.None), Hashids, Column(nameof(Id)), Required]
     public override int Id
     {
         get => this.Id = base.Id != default ? base.Id : Properties.TryGetValue(nameof(Id), out var id) ? int.Parse(id) : default;

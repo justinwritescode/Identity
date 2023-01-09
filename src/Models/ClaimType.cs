@@ -15,7 +15,7 @@ namespace JustinWritesCode.Identity.Models;
 [Table(tbl_ClaimType, Schema = IdSchema)]
 public class ClaimType : IIdentifiable<long>
 {
-    [Key, DbGen(DatabaseGeneratedOption.Identity)]
+    [Key, DbGen(DbGen.Identity)]
     public long Id { get; set; }
 
     [Column(nameof(Uri)), StringLength(UriMaxLength)]

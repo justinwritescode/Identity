@@ -11,7 +11,6 @@
  */
 
 using JustinWritesCode.Identity.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace JustinWritesCode.Identity.AutoMapper;
 

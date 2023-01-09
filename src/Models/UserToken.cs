@@ -18,7 +18,7 @@ using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 [JSerializable(typeof(UserToken))]
 public class UserToken : IdentityUserToken<int>, IIdentifiable<int>, IUserAssociatedEntity//, IUserAssociatedEntity//, IUserLoginThing//, IHaveTimestamps
 {
-    [Key, DbGen(DbGenO.Identity)]
+    [Key, DbGen(DbGen.Identity)]
     public virtual int Id { get; set; } //= NewId;
 
     [Column(nameof(UserId))]

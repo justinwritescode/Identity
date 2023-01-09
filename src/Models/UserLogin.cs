@@ -20,9 +20,9 @@ using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 
 [Table(tbl_UserLogin, Schema = IdSchema), DebuggerDisplay("User Login (Id} - {LoginProvider}: {ProviderKey})")]
 [JSerializable(typeof(UserLogin))]
-public class UserLogin : IdentityUserLogin<int>, IIdentifiable<int>, IUserAssociatedEntity//, IUserLoginThing//, IHaveTimestamps
+public class UserLogin : IdentityUserLogin<int>, IIdentifiable<int>, IUserAssociatedEntity, IUserLoginThing//, IHaveTimestamps
 {
-    [Key, DbGen(DbGenO.Identity), Column(nameof(Id), TypeName = DbTypeInt), Required]
+    [Key, DbGen(DbGen.Identity), Column(nameof(Id), TypeName = DbTypeInt), Required]
     public virtual int Id { get; set; }
 
     [NotMapped]

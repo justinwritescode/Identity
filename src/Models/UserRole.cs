@@ -21,13 +21,13 @@ using static JustinWritesCode.EntityFrameworkCore.Constants.Schemas;
 [JSerializable(typeof(UserRole))]
 public class UserRole : IdentityUserRole<int>, IIdentifiable<int>//, IUserAssociatedEntity//, IHaveTimestamps
 {
-    [Key, DbGen(DbGenO.None), Column(nameof(Id), TypeName = DbTypeBigInt)]
+    [Key, DbGen(DbGen.None), Column(nameof(Id), TypeName = DbTypeInt)]
     public virtual int Id { get; set; } //= NewId;
 
-    [Column(nameof(RoleId), Order = 2, TypeName = DbTypeBigInt)]
+    [Column(nameof(RoleId), Order = 2, TypeName = DbTypeInt)]
     public override int RoleId { get => base.RoleId; set => base.RoleId = value; }
 
-    [Column(nameof(UserId), Order = 1, TypeName = DbTypeBigInt)]
+    [Column(nameof(UserId), Order = 1, TypeName = DbTypeInt)]
     public override int UserId { get => base.UserId; set => base.UserId = value; }
 
     public User User { get; set; }

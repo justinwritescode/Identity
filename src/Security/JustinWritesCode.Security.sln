@@ -1,6 +1,4 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustinWritesCode.Security", "JustinWritesCode.Security.csproj", "{F241A361-1A5A-44AC-88C6-1AD707E7571E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustinWritesCode.Security.Constants", "Constants\JustinWritesCode.Security.Constants.csproj", "{977F3AF4-80DC-406C-9550-D555B9CB2C7B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D2B289EA-B5CD-49B0-9234-98460CC17C83}"
@@ -14,16 +12,6 @@ Global
 		Testing|Any CPU = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Local|Any CPU.ActiveCfg = Local|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Local|Any CPU.Build.0 = Local|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Staging|Any CPU.Build.0 = Staging|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E}.Testing|Any CPU.Build.0 = Testing|Any CPU
 		{977F3AF4-80DC-406C-9550-D555B9CB2C7B}.Local|Any CPU.ActiveCfg = Local|Any CPU
 		{977F3AF4-80DC-406C-9550-D555B9CB2C7B}.Local|Any CPU.Build.0 = Local|Any CPU
 		{977F3AF4-80DC-406C-9550-D555B9CB2C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -39,7 +27,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F241A361-1A5A-44AC-88C6-1AD707E7571E} = {D2B289EA-B5CD-49B0-9234-98460CC17C83}
 		{977F3AF4-80DC-406C-9550-D555B9CB2C7B} = {D2B289EA-B5CD-49B0-9234-98460CC17C83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
