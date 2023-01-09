@@ -12,17 +12,10 @@
 
 
 <Project Sdk="Microsoft.NET.Sdk">
+    <Sdk Name="MetapackageSdk" />
     <PropertyGroup>
-        <NoBuild>true</NoBuild>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <IncludeBuiltProjectOutputGroup>false</IncludeBuiltProjectOutputGroup>
-        <IncludeSourceFilesProjectOutputGroup>false</IncludeSourceFilesProjectOutputGroup>
         <IncludeInSolutionFile>false</IncludeInSolutionFile>
-        <TargetFrameworks>net7.0</TargetFrameworks>
-        <RestoreDependsOn>
-            $(RestoreDependsOn);
-            CleanPreBuild
-        </RestoreDependsOn>
+        <TargetFramework>net7.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="./src/Abstractions/JustinWritesCode.Identity.Abstractions.csproj" />
@@ -35,7 +28,6 @@
         <ProjectReference Include="./src/Security/JustinWritesCode.Security.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Remove="@(Compile)" />
         <Using Include="System.Runtime.CompilerServices" />
     </ItemGroup>
     <Target Name="CleanPreBuild" BeforeTargets="Restore">
