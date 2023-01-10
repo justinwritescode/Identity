@@ -12,7 +12,4 @@
 
 
 <Project>
-  <ItemGroup>
-    <Compile Remove="@(Compile)" />
-  </ItemGroup>
 </Project>
